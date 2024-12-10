@@ -81,7 +81,6 @@ const Navbar = () => {
         {
           label: "Lahore Hospitals",
           subItems: [
-            "Lahore Hospitals",
             "Doctors Hospital",
             "Hameed Latif Hospital",
             "Evercare Hospital",
@@ -149,7 +148,6 @@ const Navbar = () => {
         {
           label: "Lab Tests",
           subItems: [
-            "Lab Tests",
             "CBC",
             "Lipid Profile",
             "LFT",
@@ -165,8 +163,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-0 shadow-md">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className="bg-gray-50 shadow-md">
+      <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         {/* Left side */}
         <div className="flex items-center space-x-8">
           <div className="text-3xl font-extrabold text-orange-400 cursor-pointer">
@@ -176,10 +174,10 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
             {Object.keys(dropdownData).map((key) => (
-              <div key={key} className="relative">
+              <div key={key} className="relative group">
                 <button
                   onClick={() => toggleDropdown(Number(key))}
-                  className="flex items-center text-gray-700 hover:text-blue-500 transition"
+                  className="flex items-center text-gray-700 hover:text-blue-500 transition duration-200 ease-in-out transform hover:scale-105"
                 >
                   {dropdownData[key].label}
                   {dropdownData[key].items.length > 0 && (
@@ -193,7 +191,7 @@ const Navbar = () => {
                   )}
                 </button>
                 {dropdownOpen === Number(key) && (
-                  <div className="absolute mt-2 w-56 bg-white shadow-lg rounded-md z-10">
+                  <div className="absolute mt-2 w-56 bg-white shadow-lg rounded-md z-10 transition duration-300 ease-in-out opacity-100">
                     <ul>
                       {dropdownData[key].items.map((item, idx) => (
                         <li key={idx} className="relative group">
@@ -201,7 +199,7 @@ const Navbar = () => {
                             onClick={() =>
                               item.subItems && toggleNestedDropdown(idx)
                             }
-                            className={`block px-4 py-2 text-left text-gray-700 hover:bg-gray-100 ${
+                            className={`block px-4 py-2 text-left text-gray-700 hover:bg-gray-100 transition duration-200 ease-in-out ${
                               item.subItems ? "cursor-pointer" : ""
                             }`}
                           >
@@ -219,14 +217,16 @@ const Navbar = () => {
                             </span>
                           </button>
                           {nestedDropdownOpen === idx && item.subItems && (
-                            <div className="absolute top-0 left-full mt-0 ml-1 w-48 bg-white shadow-lg rounded-md">
+                            <div className="absolute top-0 left-full mt-0 ml-1 w-48 bg-white shadow-lg rounded-md z-20 opacity-100 transition duration-300 ease-in-out">
                               <ul>
                                 {item.subItems.map((subItem, subIdx) => (
                                   <li
                                     key={subIdx}
-                                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                    className="px-4 py-2 hover:bg-gray-200 cursor-pointer transform transition duration-200 ease-in-out"
                                   >
-                                    {subItem}
+                                    <div className="flex items-center">
+                                      {subItem}
+                                    </div>
                                   </li>
                                 ))}
                               </ul>
@@ -244,13 +244,13 @@ const Navbar = () => {
 
         {/* Right side - Buttons */}
         <div className="hidden md:flex space-x-4">
-          <button className="px-4 py-2 text-blue-800 border border-blue-800 rounded-md hover:bg-blue-800 hover:text-white transition">
+          <button className="px-4 py-2 text-blue-800 border border-blue-800 rounded-md hover:bg-blue-800 hover:text-white transition duration-200 ease-in-out transform hover:scale-105">
             LogIn/SignUp
           </button>
-          <button className="px-4 py-2 text-orange-500 border border-orange-500 rounded-md hover:bg-orange-500 hover:text-white transition">
+          <button className="px-4 py-2 text-orange-500 border border-orange-500 rounded-md hover:bg-orange-500 hover:text-white transition duration-200 ease-in-out transform hover:scale-105">
             Join as Doctor
           </button>
-          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition">
+          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-200 ease-in-out transform hover:scale-105">
             Contact No
           </button>
         </div>
@@ -271,7 +271,7 @@ const Navbar = () => {
               <div key={key}>
                 <button
                   onClick={() => toggleDropdown(Number(key))}
-                  className="flex items-center text-gray-700 hover:text-blue-500 w-full text-left"
+                  className="w-full text-left text-gray-700 hover:bg-gray-100 px-4 py-2"
                 >
                   {dropdownData[key].label}
                   {dropdownData[key].items.length > 0 && (
@@ -285,30 +285,34 @@ const Navbar = () => {
                   )}
                 </button>
                 {dropdownOpen === Number(key) && (
-                  <div className="mt-2 space-y-2 pl-4">
+                  <div className="mt-2 pl-4 space-y-2">
                     {dropdownData[key].items.map((item, idx) => (
                       <div key={idx}>
                         <button
                           onClick={() =>
                             item.subItems && toggleNestedDropdown(idx)
                           }
-                          className="block text-left text-gray-700"
+                          className={`w-full text-left text-gray-700 hover:bg-gray-100 px-4 py-2 ${
+                            item.subItems ? "cursor-pointer" : ""
+                          }`}
                         >
-                          {item.label}
-                          {item.subItems && (
-                            <span className="ml-2 text-xs">
-                              {nestedDropdownOpen === idx ? (
-                                <IoIosArrowUp />
-                              ) : (
-                                <IoIosArrowDown />
-                              )}
-                            </span>
-                          )}
+                          <span className="flex items-center justify-between">
+                            {item.label}
+                            {item.subItems && (
+                              <span className="ml-2 text-xs">
+                                {nestedDropdownOpen === idx ? (
+                                  <IoIosArrowUp />
+                                ) : (
+                                  <IoIosArrowDown />
+                                )}
+                              </span>
+                            )}
+                          </span>
                         </button>
                         {nestedDropdownOpen === idx && item.subItems && (
                           <div className="mt-2 pl-4 space-y-2">
                             {item.subItems.map((subItem, subIdx) => (
-                              <div key={subIdx} className="text-gray-700">
+                              <div key={subIdx} className="flex items-center">
                                 {subItem}
                               </div>
                             ))}
@@ -320,17 +324,6 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <div className="flex flex-col space-y-4">
-              <button className="px-4 py-2 text-blue-800 border border-blue-800 rounded-md hover:bg-blue-800 hover:text-white transition">
-                LogIn/SignUp
-              </button>
-              <button className="px-4 py-2 text-orange-500 border border-orange-500 rounded-md hover:bg-orange-500 hover:text-white transition">
-                Join as Doctor
-              </button>
-              <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition">
-                Contact No
-              </button>
-            </div>
           </div>
         </div>
       )}
