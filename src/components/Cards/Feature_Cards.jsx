@@ -41,7 +41,7 @@ const FeatureSection = () => {
   return (
     <section className="w-full">
       <div className="max-w-screen-xl mx-auto mb-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:px-0 px-6">
           {features.map((feature, index) => (
             <a
               key={index}
@@ -51,7 +51,7 @@ const FeatureSection = () => {
               <img
                 src={feature.img}
                 alt={feature.heading}
-                className="w-full h-auto mb-4 object-cover"
+                className="w-full rounded-t-lg h-auto mb-4 object-cover"
               />
               <h3 className="text-md font-semibold">{feature.heading}</h3>
               <p className="text-gray-600 text-sm">{feature.para}</p>
