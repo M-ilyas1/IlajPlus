@@ -19,15 +19,12 @@ const HeroSection = () => {
             <input
               type="text"
               placeholder="Search for doctors, hospitals..."
-              className="text-black bg-white border border-white px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="text-black bg-white border border-white px-4 py-2 rounded-l-md w-full focus:outline-none focus:ring-2 focus:ring-orange-500"
             />
-            <button
-              className="bg-orange-500 text-white px-6 py-2 rounded-r-md font-semibold hover:bg-orange-600 transition duration-300"
-            >
-              Search
+            <button className="bg-orange-500 text-white px-6 py-2 rounded-r-md font-semibold hover:bg-orange-600 transition duration-300">
+              Search.
             </button>
           </div>
-
         </div>
 
         {/* Right Side (Image) */}
