@@ -18,7 +18,6 @@ const doctors = [
   { img: Doctor2, name: "Dr. Robert White", specialization: "Psychiatrist" },
   { img: Doctor2, name: "Dr. Robert White", specialization: "Psychiatrist" },
   { img: Doctor2, name: "Dr. Robert White", specialization: "Psychiatrist" },
-  // Add more doctors here...
 ];
 
 const FeatureSection = () => {
@@ -32,13 +31,13 @@ const FeatureSection = () => {
     <section className="w-full py-8 bg-gray-100">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="flex flex-col sm:flex-row justify-between items-center py-2 space-y-4 sm:space-y-0">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center sm:text-left">
+        <div className="flex flex-row justify-between items-center py-2 space-y-4 sm:space-y-0">
+          <h2 className="text-base sm:text-2xl font-bold text-center sm:text-left">
             Consult Best Doctors Online
           </h2>
           <button
             onClick={togglePopup}
-            className="text-blue-500 px-6 py-2 rounded-lg hover:text-blue-600 transition"
+            className="text-blue-500 text-base pb-4 sm:text-lg rounded-lg hover:text-blue-600 transition-transform transform hover:scale-105"
           >
             See All
           </button>
@@ -68,7 +67,7 @@ const FeatureSection = () => {
       {/* Popup Modal */}
       {isPopupOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white rounded-lg p-2 w-[90%] sm:w-[80%] lg:w-[60%] h-[70%] max-w-4xl overflow-y-auto">
+          <div className="bg-white rounded-lg md:p-6 p-2 w-[90%] sm:w-[80%] lg:w-[60%] h-[70%] max-w-4xl overflow-y-auto">
             <div className="flex justify-between items-center mb-4">
               <input
                 type="text"
@@ -77,7 +76,7 @@ const FeatureSection = () => {
               />
               <button
                 onClick={togglePopup}
-                className=" text-orange-700 md:text-3xl text-2xl outline-none rounded-lg transition"
+                className=" text-blue-700 md:text-3xl text-2xl outline-none rounded-lg transition"
               >
                 <IoCloseCircle/>
               </button>
