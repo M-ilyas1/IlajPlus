@@ -30,7 +30,6 @@ const FeatureSection = () => {
   return (
     <section className="w-full py-8 bg-gray-100">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
         <div className="flex flex-row justify-between items-center py-2 space-y-4 sm:space-y-0">
           <h2 className="text-base sm:text-2xl font-bold text-center sm:text-left">
             Consult Best Doctors Online
@@ -43,7 +42,6 @@ const FeatureSection = () => {
           </button>
         </div>
 
-        {/* Doctors Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {doctors.slice(0, 6).map((doctor, index) => (
             <div
@@ -64,7 +62,6 @@ const FeatureSection = () => {
         </div>
       </div>
 
-      {/* Popup Modal */}
       {isPopupOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg md:p-6 p-2 w-[90%] sm:w-[80%] lg:w-[60%] h-[70%] max-w-4xl overflow-y-auto">

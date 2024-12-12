@@ -24,7 +24,6 @@ const Navbar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  // Data for the menu
   const dropdownData = {
     0: {
       label: "Doctors",
