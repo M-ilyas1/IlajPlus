@@ -7,42 +7,42 @@ const reviews = [
   {
     id: 1,
     name: "John Doe",
-    review: "Amazing service! Highly recommend to everyone.",
+    review: "Great platform, very efficient and works really well on both phone and web. I think this is the most easiest way of booking appointments in Pakistan as it has made the whole process much more efficient.",
     img: Doctor1,
     rating: 5,
   },
   {
     id: 2,
     name: "Jane Smith",
-    review: "Great experience. The doctors are very professional.",
+    review: "A very helpful app for booking appointments and searching for the required doctors. Has made my life a lot easy. I would strongly recommend this to all",
     img: Doctor1,
     rating: 4,
   },
   {
     id: 3,
     name: "Sam Wilson",
-    review: "I am very satisfied with the consultation.",
+    review: "Literally the best website to book the appointments online for Doctors. The service is great, helpline guys are very cooperative and understanding. And I don't have to hassle through different hospitals anymore now.",
     img: Doctor1,
     rating: 5,
   },
   {
     id: 4,
     name: "Emily Johnson",
-    review: "Easy to use and very helpful. Love it!",
+    review: "The only good healthcare website in Pakistan. The suggested doctors are good and the doctors on the forum ate very responsive too",
     img: Doctor1,
     rating: 4,
   },
   {
     id: 5,
     name: "Michael Brown",
-    review: "Top-notch service! Will use it again.",
+    review: "Very helpful staff. Helped me book appointment with my gastroenterologist. I do all my scheduling through oladoc now. Thanks a bunch.",
     img: Doctor2,
     rating: 5,
   },
   {
     id: 6,
     name: "Sophia Davis",
-    review: "The best platform for online consultation.",
+    review: "The only good healthcare website in Pakistan. The suggested doctors are good and the doctors on the forum ate very responsive too",
     img: Doctor1,
     rating: 4,
   },
@@ -84,9 +84,10 @@ const CustomersReviewCards = () => {
   return (
     <section className="w-full py-8">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6">
-          What Our Customers Say
+        <h2 className="text-2xl sm:text-3xl font-medium text-center">
+        Our Customers love us
         </h2>
+        <p className="text-center">Check out the reviews from our satisfied customers</p>
         {/* Navigation Buttons */}
         <div className="flex justify-end gap-2 my-4">
           <button
