@@ -1,23 +1,20 @@
 import { useState } from "react";
 import { IoCloseCircle } from "react-icons/io5";
-import Doctor1 from "../../Imgs/feature_img/fea2.png";
-import Doctor2 from "../../Imgs/feature_img/fea2.png";
-import Doctor3 from "../../Imgs/feature_img/fea2.png";
-import Doctor4 from "../../Imgs/feature_img/fea2.png";
+import { blood_specialist, child_specialist, dentist, chest_specialist, cosmetic_surgeon, diabetologist, endocrinologist, ent_specialist, eye_specialist, general_physician, general_surgeon, gynecologist, heart_specialist, kidney_specialist, neurologist, oncologist, orthopedic_surgeon, physiotherapist, skin_specialist, speech_therapist } from '../../assets/Find_Doc/index'
 
 const doctors = [
-  { img: Doctor1, name: "Dr. John Smith", specialization: "Cardiologist" },
-  { img: Doctor2, name: "Dr. Jane Doe", specialization: "Neurologist" },
-  { img: Doctor3, name: "Dr. Alice Brown", specialization: "Pediatrician" },
-  { img: Doctor4, name: "Dr. Mike Johnson", specialization: "Orthopedist" },
-  { img: Doctor1, name: "Dr. Emily Clark", specialization: "Dermatologist" },
-  { img: Doctor2, name: "Dr. Robert White", specialization: "Psychiatrist" },
-  { img: Doctor2, name: "Dr. Robert White", specialization: "Psychiatrist" },
-  { img: Doctor2, name: "Dr. Robert White", specialization: "Psychiatrist" },
-  { img: Doctor2, name: "Dr. Robert White", specialization: "Psychiatrist" },
-  { img: Doctor2, name: "Dr. Robert White", specialization: "Psychiatrist" },
-  { img: Doctor2, name: "Dr. Robert White", specialization: "Psychiatrist" },
-  { img: Doctor2, name: "Dr. Robert White", specialization: "Psychiatrist" },
+  { img: blood_specialist, name: "blood specialist", },
+  { img: child_specialist, name: "child specialist"},
+  { img: dentist, name: "dentist"},
+  { img: chest_specialist, name: "chest specialist"},
+  { img: cosmetic_surgeon, name: "cosmetic_surgeon"},
+  { img: diabetologist, name: "diabetologist"},
+  { img: endocrinologist, name: "endocrinologist"},
+  { img: ent_specialist, name: "ent specialist"},
+  { img: eye_specialist, name: "eye specialist"},
+  { img: general_physician, name: "general physician"},
+  { img: general_surgeon, name: "general surgeon"},
+  { img: gynecologist, name: "gynecologist" }
 ];
 
 const FeatureSection = () => {
@@ -56,7 +53,6 @@ const FeatureSection = () => {
               <h3 className="text-sm font-medium truncate w-full">
                 {doctor.name}
               </h3>
-              <p className="text-xs text-gray-500">{doctor.specialization}</p>
             </div>
           ))}
         </div>
