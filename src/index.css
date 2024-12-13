@@ -1,8 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.custom-slider .slick-slide {
-    /* margin: 0 10px; */
-}
-  
